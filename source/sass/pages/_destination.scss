@@ -1,0 +1,120 @@
+.destination{
+    text-align: center;
+    margin-top: 24px;
+    
+    @media screen and (min-width: 768px) {
+        padding-bottom: 62px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        text-align: left;
+    }
+
+    &__picture{
+        width: 170px;
+        margin: 0 auto;
+        margin-bottom: 26px;
+
+        @media screen and (min-width: 768px) {
+            width: 300px;
+            margin-bottom: 53px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: 445px;
+            margin-bottom: 0;
+            margin-top: 33px;
+        }
+    }
+    
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (min-width: 1440px) {
+            align-items: flex-start;
+            align-self: flex-start;
+        }
+    }
+
+    &__list{
+        display: flex;
+        gap: 26px;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 32px;
+            gap: 36px;
+        }
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+        margin: 0 24px;
+
+        @media screen and (min-width: 768px) {
+            gap: 78px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin: 0;
+            width: 445px;
+        }
+    }
+}
+
+.info__main-container{
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -32px;
+        left: 0;
+        background-color: #383B4B;
+
+        @media screen and (min-width: 768px) {
+            bottom: -49px;
+        }
+    }
+}
+
+.info{
+    &__text{
+        max-width: 573px;
+    }
+
+    &__stats-container{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            margin: 0 auto;
+            gap: 60px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin: 0;
+            gap: 79px;
+        }
+    }
+
+    &__stats-accent{
+        display: block;
+    }
+}
+
+.destination .section__content-container{
+    @media screen and (min-width: 1440px) {
+        gap: 157px;
+        margin-left: 230px;
+        margin-right: 163px; 
+    }
+}

@@ -1,0 +1,28 @@
+section{
+    display: none;
+}
+
+
+.home-active{
+    .home{
+        display: flex;
+    }
+}
+
+.destination-active{
+    .destination{
+        display: block;
+    }
+}
+
+.crew-active{
+    .crew{
+        display: flex;
+    }
+}
+
+.technology-active{
+    .technology{
+        display: flex;
+    }
+}
