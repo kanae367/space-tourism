@@ -235,6 +235,52 @@ body {
     .crew__info {
       font-size: 1.125rem; } }
 
+.technology__nav-btn {
+  font-family: "Bellefair";
+  color: #FFFFFF;
+  text-decoration: none;
+  line-height: 1; }
+  @media screen and (min-width: 1440px) {
+    .technology__nav-btn {
+      font-size: 2rem; } }
+  .technology__nav-btn_active {
+    color: #0B0D17; }
+
+.technology__title {
+  font-family: "Bellefair";
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem; }
+  @media screen and (min-width: 768px) {
+    .technology__title {
+      font-size: 2.5rem; } }
+  @media screen and (min-width: 1440px) {
+    .technology__title {
+      font-size: 3.5rem; } }
+
+.technology__span {
+  text-transform: uppercase;
+  letter-spacing: 0.16875em;
+  font-size: 0.875rem;
+  color: #D0D6F9; }
+  @media screen and (min-width: 768px) {
+    .technology__span {
+      font-size: 1rem; } }
+
+.technology__info {
+  font-family: "Barlow";
+  font-size: 0.9375rem;
+  line-height: 1.67;
+  color: #D0D6F9; }
+  @media screen and (min-width: 768px) {
+    .technology__info {
+      font-size: 1rem;
+      line-height: 1.75; } }
+  @media screen and (min-width: 1440px) {
+    .technology__info {
+      font-size: 1.125rem;
+      line-height: 2rem; } }
+
 section {
   display: none; }
 
@@ -575,3 +621,73 @@ section {
         margin-bottom: 27px; } }
   .crew__info {
     max-width: 445px; }
+
+.technology {
+  flex-direction: column;
+  text-align: center;
+  margin-top: 24px; }
+  @media screen and (min-width: 768px) {
+    .technology {
+      margin-top: 40px;
+      padding-bottom: 70px; } }
+  @media screen and (min-width: 1440px) {
+    .technology .section__content-container {
+      flex-direction: row;
+      gap: 80px; }
+    .technology .section__title {
+      margin-bottom: 26px; } }
+  .technology__image-container {
+    margin-bottom: 34px; }
+    @media screen and (min-width: 768px) {
+      .technology__image-container {
+        margin-bottom: 56px; } }
+    @media screen and (min-width: 1440px) {
+      .technology__image-container {
+        order: 3;
+        margin-left: auto; } }
+  .technology__image {
+    object-fit: cover; }
+    @media screen and (min-width: 1440px) {
+      .technology__image {
+        content: url(../../images/technology/image-launch-vehicle-portrait.jpg); } }
+  .technology__nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 26px; }
+    @media screen and (min-width: 768px) {
+      .technology__nav {
+        margin-bottom: 44px; } }
+    @media screen and (min-width: 1440px) {
+      .technology__nav {
+        flex-direction: column;
+        margin-left: 165px;
+        gap: 32px; } }
+    .technology__nav-btn {
+      width: 40px;
+      padding: 11px 0;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%; }
+      @media screen and (min-width: 1440px) {
+        .technology__nav-btn {
+          width: 80px;
+          padding: 24px 0; } }
+      .technology__nav-btn_active {
+        border: none;
+        background-color: #FFFFFF; }
+  .technology__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; }
+    @media screen and (min-width: 1440px) {
+      .technology__content {
+        text-align: left;
+        margin-bottom: 40px; } }
+  .technology__span {
+    order: -1; }
+  .technology__info {
+    max-width: 450px;
+    margin: 0 24px; }
+    @media screen and (min-width: 1440px) {
+      .technology__info {
+        margin: 0;
+        max-width: 444px; } }

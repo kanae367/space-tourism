@@ -1,0 +1,100 @@
+.technology{
+    flex-direction: column;
+    text-align: center;
+    margin-top: 24px;
+    
+    @media screen and (min-width: 768px) {
+        margin-top: 40px;
+        padding-bottom: 70px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        .section__content-container{
+            flex-direction: row;
+            gap: 80px;
+        }
+
+        .section__title{
+            margin-bottom: 26px;
+        }
+    }
+
+    &__image-container{
+        margin-bottom: 34px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 56px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            order: 3;
+            margin-left: auto;
+        }
+    }
+
+    &__image{
+        object-fit: cover;
+
+        @media screen and (min-width: 1440px) {
+            content: url(../../images/technology/image-launch-vehicle-portrait.jpg);
+        }
+    }
+
+    &__nav{
+        display: flex;
+        gap: 16px;
+        margin-bottom: 26px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 44px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            flex-direction: column;
+            margin-left: 165px;
+            gap: 32px;
+        }
+
+        &-btn{
+            width: 40px;
+            padding: 11px 0;
+            border: 1px solid rgba($color-light-main, $alpha: .25);
+            border-radius: 50%;
+
+            @media screen and (min-width: 1440px) {
+                width: 80px;
+                padding: 24px 0;
+            }
+
+            &_active{
+                border: none;
+                background-color: $color-light-main;
+            }
+        }
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media screen and (min-width: 1440px) {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__span{
+        order: -1;
+    }
+
+    &__info{
+        max-width: 450px;
+        margin: 0 24px;
+
+        @media screen and (min-width: 1440px) {
+            margin: 0;
+            max-width: 444px;
+        }
+    }
+}

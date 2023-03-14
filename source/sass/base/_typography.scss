@@ -1,3 +1,5 @@
+//Общие стили
+
 *{
     line-height: 1.2;
 }
@@ -27,6 +29,8 @@
     }
 }
 
+//стили для навигации (header destination)
+
 .nav-link:link{
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -38,6 +42,8 @@
         font-size: 1rem;
     }
 }
+
+//стили для header
 
 .header{
     line-height: 1.06rem;
@@ -51,6 +57,8 @@
         font-weight: 700;
     }
 }
+
+// стили для home
 
 .home{
     &__title{
@@ -119,6 +127,8 @@
     }
 }
 
+//стили для destination
+
 .destination{
     .nav-link{
         color: $color-secondary;
@@ -179,6 +189,8 @@
     }
 }
 
+// стили для crew
+
 .crew{
     &__content{
         font-weight: 400;
@@ -225,6 +237,70 @@
 
         @media screen and (min-width: 1440px) {
             font-size: 1.125rem;
+        }
+    }
+}
+
+// стили для technology
+
+.technology{
+    &__nav{
+        &-btn{
+            font-family: "Bellefair";
+            color: $color-light-main;
+            text-decoration: none;
+            line-height: 1;
+
+            @media screen and (min-width: 1440px) {
+                font-size: 2rem;
+            }
+
+            &_active{
+                color: $color-dark-main;
+            }
+        }
+    }
+
+    &__title{
+        font-family: "Bellefair";
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1.5rem;
+
+        @media screen and (min-width: 768px) {
+            font-size: 2.5rem;
+        }
+
+        @media screen and (min-width: 1440px) {
+            font-size: 3.5rem;
+        }
+    }
+
+    &__span{
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-default;
+        font-size: 0.875rem;
+        color: $color-secondary;
+
+        @media screen and (min-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &__info{
+        font-family: "Barlow";
+        font-size: 0.9375rem;
+        line-height: 1.67;
+        color: $color-secondary;
+
+        @media screen and (min-width: 768px) {
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        @media screen and (min-width: 1440px) {
+            font-size: 1.125rem;
+            line-height: 2rem;
         }
     }
 }
