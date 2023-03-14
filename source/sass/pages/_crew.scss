@@ -3,11 +3,24 @@
     text-align: center;
     margin-top: 24px;
 
+    @media screen and (min-width: 1440px) {
+        text-align: left;
+    }
+
     .section__content-container{
         gap: 32px;
 
         @media screen and (min-width: 768px) {
             gap: 40px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            flex-direction: column;
+            align-items: start;
+
+            gap: 120px;
+            margin-left: 165px;
+            margin-top: 84px;
         }
     }
 
@@ -16,6 +29,11 @@
         width: calc(100% - 68px);
 
         @media screen and (max-width: 767px) {   
+
+            .crew__image{
+                transform: translate(15px, 0);
+            }
+
             &::after{
                 content: '';
                 position: absolute;
@@ -24,7 +42,6 @@
                 background-color: #383B4B;
                 left: 0;
                 bottom: 3px;
-    
             }
         }
 
@@ -32,6 +49,12 @@
             order: 2;
             width: auto;
             margin: 0 auto;
+        }
+
+        @media screen and (min-width: 1440px) {
+            position: absolute;
+            bottom: 0;
+            right: 137px;
         }
     }
 
@@ -42,6 +65,10 @@
         @media screen and (min-width: 768px) {
             width: 456px;
             height: auto;
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: auto;
         }
     }
 
@@ -58,6 +85,11 @@
         background-color: $color-light-main;
         opacity: .17;
 
+        @media screen and (min-width: 1440px) {
+            width: 15px;
+            height: 15px;
+        }
+
         &_active{
             opacity: 1;
         }
@@ -66,20 +98,35 @@
     &__content{
         display: flex;
         flex-direction: column;
-        max-width: 450px;
         margin: 0 24px;
 
         @media screen and (min-width: 768px) {
             order: -1;
+        }
+
+        @media screen {
+            margin: 0;
         }
     }
 
     &__position{
         order: -1;
         margin-bottom: 8px;
+        
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 15px;
+        }
     }
 
     &__name{
         margin-bottom: 16px;
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 27px;
+        }
+    }
+
+    &__info{
+        max-width: 445px;
     }
 }
