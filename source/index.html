@@ -11,7 +11,7 @@
     <title>Space Tourism</title>
 </head>
 <body>
-    <div class="container technology-active">
+    <div class="container home-active">
         <header class="header">
             <div class="header__logo">
                 <img src="images/shared/logo.svg" alt="logo">
@@ -21,28 +21,28 @@
                     <div class="header__nav-burger"></div>
                 </div>
                 <ul class="header__nav-list">
-                    <li class="header__nav-list-item">
+                    <li class="header__nav-list-item header__nav-list-item_active">
                         <span class="header__nav-item-number">00</span>
-                        <a class="header__nav-item-link nav-link" href="#">Home</a>
+                        <a class="header__nav-item-link nav-link" data-page="home" href="#">Home</a>
                     </li>
                     <li class="header__nav-list-item">
                         <span class="header__nav-item-number">01</span>
-                        <a class="header__nav-item-link nav-link" href="#destination">Destination</a>
+                        <a class="header__nav-item-link nav-link" data-page="destination" href="#">Destination</a>
                     </li>
                     <li class="header__nav-list-item">
                         <span class="header__nav-item-number">02</span>
-                        <a class="header__nav-item-link nav-link" href="#">Crew</a>
+                        <a class="header__nav-item-link nav-link" data-page="crew" href="#">Crew</a>
                     </li>
                     <li class="header__nav-list-item">
                         <span class="header__nav-item-number">03</span>
-                        <a class="header__nav-item-link nav-link" href="#">Technology</a>
+                        <a class="header__nav-item-link nav-link" data-page="technology" href="#">Technology</a>
                     </li>
                 </ul>
             </nav>
         </header>
     
         <main>
-            <section id="home" class="home">
+            <section class="home">
                 <div>
                     <h2 class="home__title">So, you want to travel to <b class="home__title-accent">space</b></h2>
                     <p class="home__paragraph">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
@@ -50,7 +50,7 @@
                 <button class="home__button">Explore</button>
             </section>
     
-            <section id="destination" class="destination">
+            <section class="destination">
                 <h2 class="section__title"><span class="section__number">01</span> Pick your destination</h2>
                 <div class="section__content-container">
                     <div class="destination__picture">
@@ -59,16 +59,16 @@
                     <div class="destination__container">
                         <ul class="destination__list">
                             <li class="destination__list-item">
-                                <a class="nav-link nav-link_active" href="#">Moon</a>
+                                <a class="nav-link nav-link_active" data-planet="moon">Moon</a>
                             </li>
                             <li class="destination__list-item">
-                                <a class="nav-link" href="#">Mars</a>
+                                <a class="nav-link" data-planet="mars">Mars</a>
                             </li>
                             <li class="destination__list-item">
-                                <a class="nav-link" href="#">Europa</a>
+                                <a class="nav-link" data-planet="europa">Europa</a>
                             </li>
                             <li class="destination__list-item">
-                                <a class="nav-link" href="#">Titan</a>
+                                <a class="nav-link" data-planet="titan">Titan</a>
                             </li>
                         </ul>
                         <div class="destination__info">
@@ -85,17 +85,17 @@
                 </div>
             </section>
     
-            <section id="crew" class="crew">
+            <section class="crew">
                 <h2 class="section__title"><span class="section__number">02</span>Meet your crew</h2>
                 <div class="section__content-container">
                     <div class="crew__image-container">
                         <img class="crew__image" src="images/crew/image-douglas-hurley.webp" alt="Douglas Hurley">
                     </div>
                     <ul class="crew__nav">
-                        <li><a class="crew__nav-link crew__nav-link_active" href="#"></a></li>
-                        <li><a class="crew__nav-link" href="#"></a></li>
-                        <li><a class="crew__nav-link" href="#"></a></li>
-                        <li><a class="crew__nav-link" href="#"></a></li>
+                        <li><a class="crew__nav-link crew__nav-link_active" data-crew="hurley"></a></li>
+                        <li><a class="crew__nav-link" data-crew="shuttleworth"></a></li>
+                        <li><a class="crew__nav-link" data-crew="glover"></a></li>
+                        <li><a class="crew__nav-link" data-crew="ansari"></a></li>
                     </ul>
                     <div class="crew__content">
                         <h3 class="crew__name">Douglas Hurley</h3>
@@ -105,16 +105,16 @@
                 </div>
             </section>
     
-            <section id="technology" class="technology">
+            <section class="technology">
                 <h2 class="section__title"><span class="section__number">03</span>Space launch 101</h2>
                 <div class="section__content-container">
                     <div class="technology__image-container">
-                        <img class="technology__image" src="images/technology/image-launch-vehicle-landscape.jpg" alt="launch photo">
+                        <img class="technology__image technology__image_vehicle" alt="vehicle photo">
                     </div>
                     <div class="technology__nav">
-                        <a class="technology__nav-btn technology__nav-btn_active" href="#">1</a>
-                        <a class="technology__nav-btn" href="#">2</a>
-                        <a class="technology__nav-btn" href="#">3</a>
+                        <a class="technology__nav-btn technology__nav-btn_active" data-technology="vehicle">1</a>
+                        <a class="technology__nav-btn" data-technology="spaceport">2</a>
+                        <a class="technology__nav-btn" data-technology="capsule">3</a>
                     </div>
                     <div class="technology__content">
                         <h3 class="technology__title">Launch vehicle</h3>
@@ -126,5 +126,9 @@
         </main>
     </div>
     <div class="content-overlay"></div>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

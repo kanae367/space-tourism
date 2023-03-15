@@ -96,3 +96,32 @@
                     0 18px 0 0 $color-secondary;
     }
 }
+
+.header__nav-list-item{
+    position: relative;
+
+    &::before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        bottom: -37px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .5s;
+        background: rgba($color-light-main, $alpha: .5);
+    }
+
+    &:hover::before{
+        background: rgba($color-light-main, $alpha: .5);
+        transform: scaleX(1);
+    }
+
+    &_active{
+        &::before{
+            background-color: $color-light-main;
+            transform: scaleX(1);
+        }
+    }
+}

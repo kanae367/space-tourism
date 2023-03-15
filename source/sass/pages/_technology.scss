@@ -35,8 +35,34 @@
     &__image{
         object-fit: cover;
 
-        @media screen and (min-width: 1440px) {
-            content: url(../../images/technology/image-launch-vehicle-portrait.jpg);
+        &_vehicle{
+            @media screen and (max-width: 1439px) {
+                content: url(../images/technology/image-launch-vehicle-landscape.jpg);
+            }
+
+            @media screen and (min-width: 1440px) {
+                content: url(../images/technology/image-launch-vehicle-portrait.jpg);
+            }
+        }
+
+        &_spaceport{
+            @media screen and (max-width: 1439px) {
+                content: url(../images/technology/image-spaceport-landscape.jpg);
+            }
+
+            @media screen and (min-width: 1440px) {
+                content: url(../images/technology/image-spaceport-portrait.jpg);
+            }
+        }
+
+        &_capsule{
+            @media screen and (max-width: 1439px) {
+                content: url(../images/technology/image-space-capsule-landscape.jpg);
+            }
+
+            @media screen and (min-width: 1440px) {
+                content: url(../images/technology/image-space-capsule-portrait.jpg);
+            }
         }
     }
 
@@ -60,6 +86,12 @@
             padding: 11px 0;
             border: 1px solid rgba($color-light-main, $alpha: .25);
             border-radius: 50%;
+            transition: border-color .4s;
+            cursor: pointer;
+
+            &:hover{
+                border-color: rgba($color: $color-light-main, $alpha: 1)
+            }
 
             @media screen and (min-width: 1440px) {
                 width: 80px;

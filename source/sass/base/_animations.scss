@@ -2,7 +2,6 @@ section{
     display: none;
 }
 
-
 .home-active{
     .home{
         display: flex;
@@ -24,5 +23,26 @@ section{
 .technology-active{
     .technology{
         display: flex;
+    }
+}
+
+.content-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: $color-dark-main;
+}
+
+@keyframes anim {
+    0%{
+        transform: translate(-80px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
     }
 }

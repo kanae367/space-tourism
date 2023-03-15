@@ -31,7 +31,8 @@
 
 //стили для навигации (header destination)
 
-.nav-link:link{
+.nav-link,
+.nav-link:visited{
     font-size: 0.875rem;
     text-transform: uppercase;
     text-decoration: none;

@@ -82,8 +82,14 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
+        cursor: pointer;
         background-color: $color-light-main;
+        transition: opacity .2s;
         opacity: .17;
+
+        &:hover{
+            opacity: .5;
+        }
 
         @media screen and (min-width: 1440px) {
             width: 15px;
@@ -91,7 +97,7 @@
         }
 
         &_active{
-            opacity: 1;
+            opacity: 1 !important;
         }
     }
 
@@ -112,7 +118,7 @@
     &__position{
         order: -1;
         margin-bottom: 8px;
-        
+
         @media screen and (min-width: 1440px) {
             margin-bottom: 15px;
         }
