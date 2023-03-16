@@ -34,6 +34,7 @@
 
     &__image{
         object-fit: cover;
+        transition: $transition-default;
 
         &_vehicle{
             @media screen and (max-width: 1439px) {
@@ -120,9 +121,14 @@
         order: -1;
     }
 
+    &__title{
+        transition: $transition-default;
+    }
+    
     &__info{
         max-width: 450px;
         margin: 0 24px;
+        transition: $transition-default;
 
         @media screen and (min-width: 1440px) {
             margin: 0;

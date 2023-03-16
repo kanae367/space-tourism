@@ -108,12 +108,13 @@
         bottom: -37px;
         left: 0;
         transform: scaleX(0);
-        transform-origin: left;
+        transform-origin: right;
         transition: transform .5s;
         background: rgba($color-light-main, $alpha: .5);
     }
 
     &:hover::before{
+        transform-origin: left;
         background: rgba($color-light-main, $alpha: .5);
         transform: scaleX(1);
     }

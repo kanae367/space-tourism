@@ -1,0 +1,26 @@
+@mixin heading($fontSize, $lineHeight: 1.2, $letterSpacing: normal){
+    text-transform: uppercase;
+    font-family: "Bellefair";
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    font-weight: 400;
+    color: $color-light-main;
+}
+
+@mixin subheading($fontSize: 1rem, $lineHeight: 1.2){
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+    font-size: $fontSize;
+    font-weight: 400;
+    line-height: $lineHeight;
+    color: $color-light-main;
+    letter-spacing: $letter-spacing-default;
+}
+
+@mixin text{
+    font-family: "Barlow";
+    font-size: 0.9375rem;
+    line-height: 1.67;
+    color: $color-secondary;
+}

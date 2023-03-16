@@ -5,10 +5,7 @@
 }
 
 .section__title{
-    font-size: 1rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-default;
+    @include subheading;
 
     @media screen and(min-width: 768px) {
         font-size: 1.25rem;
@@ -29,15 +26,25 @@
     }
 }
 
+.text{
+    @include text;
+
+    @media screen and (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    @media screen and(min-width: 1440px) {
+        font-size: 1.125rem;
+    }
+}
+
 //стили для навигации (header destination)
 
 .nav-link,
 .nav-link:visited{
-    font-size: 0.875rem;
-    text-transform: uppercase;
+    @include subheading(0.875rem, 1);
     text-decoration: none;
-    color: $color-light-main;
-    letter-spacing: $letter-spacing-default;
 
     @media screen and (min-width: 768px) {
         font-size: 1rem;
@@ -47,8 +54,6 @@
 //стили для header
 
 .header{
-    line-height: 1.06rem;
-
     @media screen and (min-width: 1440px) {
         font-size: 1rem;
         line-height: 1.2;
@@ -63,12 +68,8 @@
 
 .home{
     &__title{
-        text-transform: uppercase;
-        letter-spacing: $letter-spacing-default;
         color: $color-secondary;
-        font-size: 1rem;
-        line-height: 1.18;
-        font-weight: 400;
+        @include subheading(1rem);
 
         @media screen and (min-width: 768px) {
             font-size: 1.25rem;
@@ -80,15 +81,10 @@
         }
         
         &-accent{
-            font-weight: inherit;
-            font-family: 'Bellefair';
-            font-size: 5rem;
-            letter-spacing: normal;
-            color: $color-light-main;
+            @include heading(5rem, 1);
 
             @media screen and (min-width: 768px) {
                 font-size: 150px;
-                line-height: 1;
             }
 
             @media screen and (min-width: 1440px) {
@@ -96,30 +92,10 @@
             }
         }
     }
-    
-    &__paragraph{
-        font-size: 0.9375rem;
-        line-height: 1.67;
-        font-family: 'Barlow', sans-serif;
-        color: $color-secondary;
-
-        @media screen and (min-width: 768px) {
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-
-        @media screen and(min-width: 1440px) {
-            font-size: 1.125rem;
-        }
-    }
 
     &__button{
-        text-transform: uppercase;
-        font-family: "Bellefair";
+        @include heading(1.25rem, 1.15, 0.075rem);
         color: $color-dark-main;
-        font-size: 1.25rem;
-        line-height: 1.15;
-        letter-spacing: 0.075rem;
 
         @media screen and (min-width: 768px){
             font-size: 2rem;
@@ -130,22 +106,17 @@
 
 //стили для destination
 
-.destination{
-    .nav-link{
-        color: $color-secondary;
+.destination .nav-link{
+    color: $color-secondary;
 
-        &_active{
-            color: $color-light-main;
-        }
+    &_active{
+        color: $color-light-main;
     }
 }
 
 .info{
     &__title{
-        font-family: "Bellefair";
-        text-transform: uppercase;
-        font-size: 3.5rem;
-        font-weight: 400;
+        @include heading(3.5rem, 1.18);
 
         @media screen and (min-width: 768px) {
             font-size: 5rem;
@@ -158,18 +129,7 @@
     }
 
     &__text{
-        font-family: "Barlow";
-        font-size: 0.9375rem;
-        line-height: 1.67;
-        color: $color-secondary;
-
-        @media screen and (min-width: 768px) {
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-
         @media screen and (min-width: 1440px) {
-            font-size: 1.125rem;
             line-height: 2rem;
         }
     }
@@ -181,11 +141,7 @@
         letter-spacing: $letter-spacing-default;
         
         &-accent{
-            font-family: "Bellefair";
-            color: $color-light-main;
-            letter-spacing: normal;
-            font-size: 1.75rem;
-            line-height: 2;
+            @include heading(1.75rem, 2);
         }
     }
 }
@@ -224,49 +180,28 @@
             font-size: 3.5rem;
         }
     }
-
-    &__info{
-        font-family: "Barlow";
-        font-size: 0.9375rem;
-        line-height: 1.67;
-        color: $color-secondary;
-        
-        @media screen and (min-width: 768px) {
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-
-        @media screen and (min-width: 1440px) {
-            font-size: 1.125rem;
-        }
-    }
 }
 
 // стили для technology
 
 .technology{
-    &__nav{
-        &-btn{
-            font-family: "Bellefair";
-            color: $color-light-main;
-            text-decoration: none;
-            line-height: 1;
+    &__nav-btn{
+        font-family: "Bellefair";
+        color: $color-light-main;
+        text-decoration: none;
+        line-height: 1;
+        
+        @media screen and (min-width: 1440px) {
+            font-size: 2rem;
+        }
 
-            @media screen and (min-width: 1440px) {
-                font-size: 2rem;
-            }
-
-            &_active{
-                color: $color-dark-main;
-            }
+        &_active{
+            color: $color-dark-main;
         }
     }
 
     &__title{
-        font-family: "Bellefair";
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 1.5rem;
+        @include heading(1.5rem);
 
         @media screen and (min-width: 768px) {
             font-size: 2.5rem;
@@ -289,18 +224,7 @@
     }
 
     &__info{
-        font-family: "Barlow";
-        font-size: 0.9375rem;
-        line-height: 1.67;
-        color: $color-secondary;
-
-        @media screen and (min-width: 768px) {
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-
         @media screen and (min-width: 1440px) {
-            font-size: 1.125rem;
             line-height: 2rem;
         }
     }

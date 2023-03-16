@@ -29,7 +29,6 @@
         width: calc(100% - 68px);
 
         @media screen and (max-width: 767px) {   
-
             .crew__image{
                 transform: translate(15px, 0);
             }
@@ -61,6 +60,7 @@
     &__image{
         height: 59vw;
         width: auto;
+        transition: $transition-default;
 
         @media screen and (min-width: 768px) {
             width: 456px;
@@ -118,6 +118,7 @@
     &__position{
         order: -1;
         margin-bottom: 8px;
+        transition: $transition-default;
 
         @media screen and (min-width: 1440px) {
             margin-bottom: 15px;
@@ -126,6 +127,7 @@
 
     &__name{
         margin-bottom: 16px;
+        transition: $transition-default;
 
         @media screen and (min-width: 1440px) {
             margin-bottom: 27px;
@@ -133,6 +135,7 @@
     }
 
     &__info{
+        transition: $transition-default;
         max-width: 445px;
     }
 }

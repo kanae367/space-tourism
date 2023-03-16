@@ -1,0 +1,57 @@
+.popup{
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 254px;
+    height: 100%;
+    background-color: rgba($color: #fff, $alpha: .04);
+    backdrop-filter: blur(40px);
+    transition: all .5s;
+}
+
+.popup_active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup__list{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 118px;
+    margin-left: 32px;
+}
+
+// .popup__list-item_active{
+//     position: relative;
+//     display: flex;
+
+//     &::before{
+//         z-index: 10;
+//         position: absolute;
+//         display: block;
+//         width: 10px;
+//         height: 10px;
+//         top: 10px;
+//         right: 10px;
+//         background-color: red;
+//     }
+// }
+
+.popup__item-number{
+    margin-right: 12px;
+    @include subheading(0.875rem, 1);
+    font-weight: 700;
+}
+
+.popup__close-btn{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    right: 27px;
+    top: 34px;
+}

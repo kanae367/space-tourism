@@ -45,7 +45,7 @@
             <section class="home">
                 <div>
                     <h2 class="home__title">So, you want to travel to <b class="home__title-accent">space</b></h2>
-                    <p class="home__paragraph">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+                    <p class="home__paragraph text">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
                 </div>
                 <button class="home__button">Explore</button>
             </section>
@@ -74,7 +74,7 @@
                         <div class="destination__info">
                             <div class="info__main-container">
                                 <h3 class="info__title">Moon</h3>
-                                <p class="info__text">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+                                <p class="info__text text">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
                             </div>
                             <div class="info__stats-container"> 
                                 <p class="info__stats">avg. distance <span class="info__stats-accent">384,400 KM</span></p>
@@ -87,7 +87,7 @@
     
             <section class="crew">
                 <h2 class="section__title"><span class="section__number">02</span>Meet your crew</h2>
-                <div class="section__content-container">
+                <div class="section__content-container crew_1">
                     <div class="crew__image-container">
                         <img class="crew__image" src="images/crew/image-douglas-hurley.webp" alt="Douglas Hurley">
                     </div>
@@ -100,7 +100,7 @@
                     <div class="crew__content">
                         <h3 class="crew__name">Douglas Hurley</h3>
                         <p class="crew__position">Commander</p>
-                        <p class="crew__info">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+                        <p class="crew__info text">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
                     </div>
                 </div>
             </section>
@@ -119,13 +119,43 @@
                     <div class="technology__content">
                         <h3 class="technology__title">Launch vehicle</h3>
                         <span class="technology__span">The terminology...</span>
-                        <p class="technology__info">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+                        <p class="technology__info text">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+    
     <div class="content-overlay"></div>
+
+    <div class="popup">
+        <ul class="popup__list">
+            <li class="popup__list-item popup__list-item_active">
+                <span class="popup__item-number">00</span>
+                <a class="popup__nav-link nav-link" data-page="home" href="#">Home</a>
+            </li>
+            <li class="popup__list-item">
+                <span class="popup__item-number">01</span>
+                <a class="popup__nav-link nav-link" data-page="destination" href="#">Destination</a>
+            </li>
+            <li class="popup__list-item">
+                <span class="popup__item-number">02</span>
+                <a class="popup__nav-link nav-link" data-page="crew" href="#">Crew</a>
+            </li>
+            <li class="popup__list-item">
+                <span class="popup__item-number">03</span>
+                <a class="popup__nav-link nav-link" data-page="technology" href="#">Technology</a>
+            </li>
+        </ul>
+        <button class="popup__close-btn">
+            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Group">
+                    <rect id="Rectangle Copy" x="2.5752" y="0.954102" width="24" height="3" transform="rotate(45 2.5752 0.954102)" fill="#D0D6F9"/>
+                    <rect id="Rectangle Copy 3" x="0.454102" y="17.9246" width="24" height="3" transform="rotate(-45 0.454102 17.9246)" fill="#D0D6F9"/>
+                </g>
+            </svg>
+        </button>
+    </div>
 
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/data.js"></script>

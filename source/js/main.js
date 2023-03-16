@@ -1,29 +1,58 @@
 $(function(){
-const headerNavElements = $(".header__nav-list-item");
 
+const headerNavElements = $(".header__nav-list-item");
 const contentContainer = $(".container");
 const contentOverlay = $(".content-overlay");
 contentOverlay.fadeOut();
 
-const headerNavClickHandler = function() {
+const popupOpenBtn = $('.header__nav-overlay');
+const popup = $('.popup');
+const popupCloseBtn = $('.popup__close-btn');
+
+const popupCloseBtnClickHandler = function(){
+    popup.removeClass('popup_active');
+}
+
+const popupOpenBtnClickHandler = function(){
+    popup.addClass('popup_active');
+
+    popupCloseBtn.on('click',popupCloseBtnClickHandler);
+};
+
+popupOpenBtn.on('click', popupOpenBtnClickHandler);
+
+const popupNavElements = $('.popup__list-item');
+
+const navClickHandler = function() {
     const navElement = $(this);
     contentOverlay.fadeIn().fadeOut();
 
     headerNavElements.removeClass('header__nav-list-item_active');
     navElement.addClass('header__nav-list-item_active');
+    
     setTimeout(function(){
+        if(navElement.parent().is('.popup__list')) popup.removeClass('popup_active');
+
         const activeClass = navElement.find('.nav-link').attr('data-page') + '-active';
         contentContainer.attr('class', `container ${activeClass}`);
     }, 400)
 };
 
-headerNavElements.on('click', headerNavClickHandler);
+popupNavElements.on('click', navClickHandler);
+headerNavElements.on('click', navClickHandler);
 
 const destinationNavElements = $(".destination__list-item *");
 const planetImageElement = $(".destination__picture > img");
 const planetStatElements = $(".info__stats-accent");
 const planetTitleElement = $(".info__title");
 const planetTextElement = $(".info__text");
+
+//замена текстового контента с анимацией
+const changeText = function(element, newText){
+    element.addClass('swap-animation')
+    .delay(500)
+    .queue('fx', function(){$(this).text(newText).removeClass('swap-animation').dequeue('fx');})
+};
 
 const destinationNavClickHandler = function(){
     const planet = destination[$(this).attr("data-planet")];
@@ -32,11 +61,13 @@ const destinationNavClickHandler = function(){
     destinationNavElements.removeClass('nav-link_active');
     $(this).addClass('nav-link_active');
 
-    planetImageElement.attr('src', `images/destination/${planet.image}`);
-    planetTitleElement.text(planet.name);
-    planetTextElement.text(planet.text);
-    planetStatElements.eq(0).text(planet.facts.distance);
-    planetStatElements.eq(1).text(planet.facts.travelTime);
+    planetImageElement.addClass('swap-animation')
+        .delay(500)
+        .queue('fx', function(){$(this).attr('src', `images/destination/${planet.image}`).removeClass('swap-animation').dequeue('fx');})
+    changeText(planetTitleElement, planet.name);
+    changeText(planetTextElement, planet.text);
+    changeText(planetStatElements.eq(0), planet.facts.distance);
+    changeText(planetStatElements.eq(1), planet.facts.travelTime);
 };
 
 destinationNavElements.on('click', destinationNavClickHandler);
@@ -54,10 +85,12 @@ const crewNavClickHandler = function(){
     crewNavElements.removeClass('crew__nav-link_active');
     $(this).addClass('crew__nav-link_active');
 
-    memberPhotoElement.attr('src', `images/crew/${member.photo}`);
-    memberNameElement.text(member.name);
-    memberPositionElement.text(member.position);
-    memberInfoElement.text(member.info);
+    memberPhotoElement.addClass('swap-animation')
+    .delay(500)
+    .queue('fx', function(){$(this).attr('src', `images/crew/${member.photo}`).removeClass('swap-animation').dequeue('fx');});
+    changeText(memberNameElement, member.name);
+    changeText(memberPositionElement, member.position);
+    changeText(memberInfoElement, member.info);
 };
 
 crewNavElements.on('click', crewNavClickHandler);
@@ -74,10 +107,13 @@ const techNavClickHandler = function(){
     techNavElements.removeClass('technology__nav-btn_active');
     $(this).addClass('technology__nav-btn_active');
 
-    techImage.attr('class',  `technology__image technology__image_${tech.id}`);
-    techTitle.text(tech.title);
-    techInfo.text(tech.text);
+    techImage.addClass('swap-animation')
+        .delay(500)
+        .queue('fx', function(){$(this).attr('class',  `technology__image technology__image_${tech.id}`).removeClass('swap-animation').dequeue('fx');})
+    changeText(techTitle, tech.title);
+    changeText(techInfo, tech.text);
 };
 
 techNavElements.on('click', techNavClickHandler);
+
 });
