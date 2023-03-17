@@ -24,3 +24,8 @@
     line-height: 1.67;
     color: $color-secondary;
 }
+
+@mixin blur{
+    background-color: rgba($color: #fff, $alpha: .05);
+    backdrop-filter: blur(40px);
+}

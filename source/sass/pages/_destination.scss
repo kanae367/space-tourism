@@ -16,7 +16,7 @@
         margin-bottom: 26px;
 
         img{
-            transition: all .4s;
+            transition: $transition-default;
         }
 
         @media screen and (min-width: 768px) {
@@ -26,11 +26,12 @@
 
         @media screen and (min-width: 1440px) {
             width: 445px;
+            margin-left: 0;
             margin-bottom: 0;
             margin-top: 33px;
         }
     }
-    
+
     &__container{
         display: flex;
         flex-direction: column;
@@ -87,7 +88,6 @@
         }
     
         &:hover::before{
-            background: rgba($color-light-main, $alpha: .5);
             transform: scaleX(1);
             transform-origin: left;
         }
@@ -122,11 +122,11 @@
 .info{
     &__text{
         max-width: 573px;
-        transition: all .4s;
+        transition: $transition-default;
     }
 
     &__title{
-        transition: all .4s;
+        transition: $transition-default;
     }
 
     &__stats-container{
@@ -148,7 +148,7 @@
 
     &__stats-accent{
         display: block;
-        transition: all .4s;
+        transition: $transition-default;
     }
 }
 

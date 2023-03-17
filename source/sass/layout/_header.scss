@@ -25,15 +25,14 @@
 
         @media screen and (min-width: 1440px) {
             margin-left: 55px;
-            position: relative;
 
             &::after{
                 content: '';
                 position: absolute;
-                z-index: 2;
-                left: 112px;
-                top: 23.5px;
-                width: 473px;
+                z-index: 10;
+                left: 167px;
+                top: 88px;
+                right: 800px;
                 height: 1px;
                 background-color: $color-light-main;
                 opacity: .25;
@@ -45,12 +44,12 @@
 .header__nav{
     position: relative;
     margin-right: 24px;
+    z-index: 2;
 
     @media screen and (min-width: 768px) {
+        @include blur;
         margin-right: 0;
         padding: 40px 48px ;
-        background-color: rgba($color: #ffffff, $alpha: .05);
-        backdrop-filter: blur(40px);
         
         @media screen and (min-width: 1440px) {
             padding: 40px 165px 40px 123px;

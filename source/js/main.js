@@ -27,8 +27,8 @@ const navClickHandler = function() {
     const navElement = $(this);
     contentOverlay.fadeIn().fadeOut();
 
-    headerNavElements.removeClass('header__nav-list-item_active');
-    navElement.addClass('header__nav-list-item_active');
+    navElement.parent().children().removeClass(`${navElement.parent().attr('class')}-item_active`);
+    navElement.addClass(`${navElement.attr('class')}_active`);
     
     setTimeout(function(){
         if(navElement.parent().is('.popup__list')) popup.removeClass('popup_active');
@@ -50,7 +50,7 @@ const planetTextElement = $(".info__text");
 //замена текстового контента с анимацией
 const changeText = function(element, newText){
     element.addClass('swap-animation')
-    .delay(500)
+    .delay(400)
     .queue('fx', function(){$(this).text(newText).removeClass('swap-animation').dequeue('fx');})
 };
 
@@ -62,7 +62,7 @@ const destinationNavClickHandler = function(){
     $(this).addClass('nav-link_active');
 
     planetImageElement.addClass('swap-animation')
-        .delay(500)
+        .delay(400)
         .queue('fx', function(){$(this).attr('src', `images/destination/${planet.image}`).removeClass('swap-animation').dequeue('fx');})
     changeText(planetTitleElement, planet.name);
     changeText(planetTextElement, planet.text);
@@ -86,7 +86,7 @@ const crewNavClickHandler = function(){
     $(this).addClass('crew__nav-link_active');
 
     memberPhotoElement.addClass('swap-animation')
-    .delay(500)
+    .delay(400)
     .queue('fx', function(){$(this).attr('src', `images/crew/${member.photo}`).removeClass('swap-animation').dequeue('fx');});
     changeText(memberNameElement, member.name);
     changeText(memberPositionElement, member.position);

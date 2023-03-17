@@ -10,17 +10,15 @@ img {
   width: 100%;
   height: 100%; }
 
-body {
-  min-width: 375px;
-  margin: 0 auto;
-  font-family: "Barlow Condensed", sans-serif; }
-
 .container {
+  min-width: 375px;
+  max-width: 1920px;
+  margin: 0 auto;
   min-height: 100vh;
+  position: relative;
   background-color: #0B0D17;
   background-size: cover;
-  background-repeat: no-repeat;
-  color: #FFFFFF; }
+  background-repeat: no-repeat; }
   .container.home-active {
     background-image: url(../images/home/background-home-mobile.jpg); }
     @media screen and (min-width: 768px) {
@@ -58,12 +56,33 @@ body {
         background-image: url(../images/technology/background-technology-desktop.jpg);
         background-size: 100% 100%; } }
 
+section {
+  display: none; }
+
+.home-active .home {
+  display: flex; }
+
+.destination-active .destination {
+  display: block; }
+
+.crew-active .crew {
+  display: flex; }
+
+.technology-active .technology {
+  display: flex; }
+
+.content-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: #0B0D17; }
+
 .swap-animation {
   transform: translate(-80px);
   opacity: 0; }
-
-* {
-  line-height: 1.2; }
 
 .section__title {
   font-family: "Barlow Condensed", sans-serif;
@@ -81,6 +100,7 @@ body {
       font-size: 1.75rem; } }
 
 .section__number {
+  font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
   opacity: 0.25;
   margin-right: 18px; }
@@ -119,7 +139,8 @@ body {
 @media screen and (min-width: 1440px) {
   .header {
     font-size: 1rem;
-    line-height: 1.2; } }
+    line-height: 1.2;
+    color: #FFFFFF; } }
 
 .header__nav-item-number {
   font-weight: 700; }
@@ -225,6 +246,7 @@ body {
 .crew__name {
   text-transform: uppercase;
   font-family: "Bellefair";
+  color: #FFFFFF;
   font-size: 1.5rem; }
   @media screen and (min-width: 768px) {
     .crew__name {
@@ -260,9 +282,13 @@ body {
       font-size: 3.5rem; } }
 
 .technology__span {
+  font-family: "Barlow Condensed", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.16875em;
   font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #FFFFFF;
+  letter-spacing: 0.16875em;
   color: #D0D6F9; }
   @media screen and (min-width: 768px) {
     .technology__span {
@@ -271,30 +297,6 @@ body {
 @media screen and (min-width: 1440px) {
   .technology__info {
     line-height: 2rem; } }
-
-section {
-  display: none; }
-
-.home-active .home {
-  display: flex; }
-
-.destination-active .destination {
-  display: block; }
-
-.crew-active .crew {
-  display: flex; }
-
-.technology-active .technology {
-  display: flex; }
-
-.content-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-  background-color: #0B0D17; }
 
 @keyframes anim {
   0% {
@@ -325,17 +327,17 @@ section {
       flex-direction: row; } }
 
 .popup {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px);
   visibility: hidden;
-  opacity: 0;
-  display: flex;
   position: absolute;
+  display: flex;
+  height: 100%;
+  width: 254px;
   top: 0;
   right: 0;
-  width: 254px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(40px);
-  transition: all .5s; }
+  opacity: 0;
+  transition: all 0.4s; }
 
 .popup_active {
   visibility: visible;
@@ -348,8 +350,17 @@ section {
   margin-top: 118px;
   margin-left: 32px; }
 
+.popup__list-item_active::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 21px;
+  right: 0;
+  transition: all 0.4s;
+  background-color: #FFFFFF; }
+
 .popup__item-number {
-  margin-right: 12px;
   font-family: "Barlow Condensed", sans-serif;
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -357,6 +368,7 @@ section {
   line-height: 1;
   color: #FFFFFF;
   letter-spacing: 0.16875em;
+  margin-right: 12px;
   font-weight: 700; }
 
 .popup__close-btn {
@@ -389,28 +401,28 @@ section {
         margin-left: 39px; } }
     @media screen and (min-width: 1440px) {
       .header__logo {
-        margin-left: 55px;
-        position: relative; }
+        margin-left: 55px; }
         .header__logo::after {
           content: '';
           position: absolute;
-          z-index: 2;
-          left: 112px;
-          top: 23.5px;
-          width: 473px;
+          z-index: 10;
+          left: 167px;
+          top: 88px;
+          right: 800px;
           height: 1px;
           background-color: #FFFFFF;
           opacity: .25; } }
 
 .header__nav {
   position: relative;
-  margin-right: 24px; }
+  margin-right: 24px;
+  z-index: 2; }
   @media screen and (min-width: 768px) {
     .header__nav {
-      margin-right: 0;
-      padding: 40px 48px;
       background-color: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(40px); } }
+      backdrop-filter: blur(40px);
+      margin-right: 0;
+      padding: 40px 48px; } }
   @media screen and (min-width: 768px) and (min-width: 1440px) {
     .header__nav {
       padding: 40px 165px 40px 123px; } }
@@ -527,7 +539,7 @@ section {
     margin: 0 auto;
     margin-bottom: 26px; }
     .destination__picture img {
-      transition: all .4s; }
+      transition: all 0.4s; }
     @media screen and (min-width: 768px) {
       .destination__picture {
         width: 300px;
@@ -535,6 +547,7 @@ section {
     @media screen and (min-width: 1440px) {
       .destination__picture {
         width: 445px;
+        margin-left: 0;
         margin-bottom: 0;
         margin-top: 33px; } }
   .destination__container {
@@ -580,7 +593,6 @@ section {
       transition: transform .2s;
       background: rgba(255, 255, 255, 0.5); }
     .destination .nav-link:hover::before {
-      background: rgba(255, 255, 255, 0.5);
       transform: scaleX(1);
       transform-origin: left; }
     .destination .nav-link_active::before {
@@ -603,10 +615,10 @@ section {
 
 .info__text {
   max-width: 573px;
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 .info__title {
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 .info__stats-container {
   display: flex;
@@ -624,7 +636,7 @@ section {
 
 .info__stats-accent {
   display: block;
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 @media screen and (min-width: 1440px) {
   .destination .section__content-container {
@@ -705,7 +717,7 @@ section {
         width: 15px;
         height: 15px; } }
     .crew__nav-link_active {
-      opacity: 1 !important; }
+      opacity: 1; }
   .crew__content {
     display: flex;
     flex-direction: column;
