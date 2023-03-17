@@ -63,7 +63,7 @@ const destinationNavClickHandler = function(){
 
     planetImageElement.addClass('swap-animation')
         .delay(400)
-        .queue('fx', function(){$(this).attr('src', `images/destination/${planet.image}`).removeClass('swap-animation').dequeue('fx');})
+        .queue('fx', function(){$(this).attr('src', `source/images/destination/${planet.image}`).removeClass('swap-animation').dequeue('fx');})
     changeText(planetTitleElement, planet.name);
     changeText(planetTextElement, planet.text);
     changeText(planetStatElements.eq(0), planet.facts.distance);
@@ -87,7 +87,7 @@ const crewNavClickHandler = function(){
 
     memberPhotoElement.addClass('swap-animation')
     .delay(400)
-    .queue('fx', function(){$(this).attr('src', `images/crew/${member.photo}`).removeClass('swap-animation').dequeue('fx');});
+    .queue('fx', function(){$(this).attr('src', `source/images/crew/${member.photo}`).removeClass('swap-animation').dequeue('fx');});
     changeText(memberNameElement, member.name);
     changeText(memberPositionElement, member.position);
     changeText(memberInfoElement, member.info);
