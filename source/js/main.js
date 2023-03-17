@@ -116,4 +116,18 @@ const techNavClickHandler = function(){
 
 techNavElements.on('click', techNavClickHandler);
 
+const homeBtn = $('.home__button');
+
+const homeBtnClickHandler = function(){
+    headerNavElements.removeClass('header__nav-list-item_active');
+    headerNavElements.eq(1).addClass('header__nav-list-item_active');
+    contentOverlay.fadeIn().fadeOut();
+
+    setTimeout(function(){
+        contentContainer.attr('class', 'container destination-active');
+    }, 400);
+};
+
+homeBtn.on('click', homeBtnClickHandler);
+
 });

@@ -100,7 +100,7 @@
             }
 
             &_active{
-                border: none;
+                border: 1px solid transparent;
                 background-color: $color-light-main;
             }
         }
