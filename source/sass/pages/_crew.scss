@@ -57,7 +57,7 @@
             right: 137px;
 
             transition: $default-transition;
-            transform: translate3d(calc(var(--moveX) * 4), calc(var(--moveY) + 20px), 0);
+            transform: translate3d(calc(var(--moveX) * 4), calc(calc(var(--moveY) * 2) + 20px), 0);
         }
     }
 

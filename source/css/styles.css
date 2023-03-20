@@ -763,7 +763,7 @@ section {
         bottom: 0;
         right: 137px;
         transition: transform 4s ease-in-out;
-        transform: translate3d(calc(var(--moveX) * 4), calc(var(--moveY) + 20px), 0); } }
+        transform: translate3d(calc(var(--moveX) * 4), calc(calc(var(--moveY) * 2) + 20px), 0); } }
   .crew__image {
     height: 59vw;
     width: auto; }
