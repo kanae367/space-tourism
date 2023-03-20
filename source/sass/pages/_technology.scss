@@ -21,50 +21,80 @@
 
     &__image-container{
         margin-bottom: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: 767px) {
+            min-height: 56vw;   
+        }
 
         @media screen and (min-width: 768px) {
             margin-bottom: 56px;
+            min-height: 430px;
         }
 
         @media screen and (min-width: 1440px) {
             order: 3;
-            width: 515px;
-            height: 527px;
+            max-height: 550px;
+            max-width: 510px;
             margin-left: auto;
+            margin-right: 50px;
+        
+        }
+        @media screen and (min-width: 1680px) {
+            max-width: 700px;
+            margin-right: 100px;
         }
     }
 
     &__image{
-        object-fit: cover;
-        transition: $transition-default;
+        object-fit: contain;
+        z-index: 0;
+        
+        @media screen and (max-width: 1439px) {
+            max-width: 768px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            transition-property: rotate;
+            transition-timing-function: ease-in-out;
+        }
 
         &_vehicle{
+            content: url(../images/technology/image-launch-vehicle-landscape.png);
+
             @media screen and (max-width: 1439px) {
-                content: url(../images/technology/image-launch-vehicle-landscape.jpg);
+                max-width: 768px;
             }
 
             @media screen and (min-width: 1440px) {
-                content: url(../images/technology/image-launch-vehicle-portrait.jpg);
+                rotate: -60deg;
+                transition-duration: 8s;
             }
         }
 
         &_spaceport{
-            @media screen and (max-width: 1439px) {
-                content: url(../images/technology/image-spaceport-landscape.jpg);
-            }
-
+            content: url(../images/technology/space-station.png);
+            
             @media screen and (min-width: 1440px) {
-                content: url(../images/technology/image-spaceport-portrait.jpg);
+                rotate: 180deg;
+                transition-duration: 40s;
             }
         }
 
         &_capsule{
-            @media screen and (max-width: 1439px) {
-                content: url(../images/technology/image-space-capsule-landscape.jpg);
+            max-height: 430px;
+            content: url(../images/technology/space-capsule.png);
+
+            @media screen and (max-width: 768px) {
+                max-height: 55.3vw;
+                rotate: -90deg;
             }
 
             @media screen and (min-width: 1440px) {
-                content: url(../images/technology/image-space-capsule-portrait.jpg);
+                rotate: 270deg;
+                transition-duration: 20s;
             }
         }
     }
@@ -122,18 +152,14 @@
     &__span{
         order: -1;
     }
-
-    &__title{
-        transition: $transition-default;
-    }
     
     &__info{
         max-width: 450px;
         margin: 0 24px;
-        transition: $transition-default;
 
         @media screen and (min-width: 1440px) {
             margin: 0;
+            min-height: 192px;
             max-width: 444px;
         }
     }

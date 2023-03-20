@@ -10,44 +10,29 @@ img {
   width: 100%;
   height: 100%; }
 
+body {
+  max-width: 1920px;
+  margin: 0 auto; }
+
 .container {
   min-width: 375px;
-  max-width: 1920px;
+  overflow: hidden;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(min(100vh, 1080px));
   position: relative;
-  background-color: #0B0D17;
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-color: #0B0D17; }
   .container.home-active {
-    background-image: url(../images/home/background-home-mobile.jpg); }
-    @media screen and (min-width: 768px) {
-      .container.home-active {
-        background-image: url(../images/home/background-home-tablet.jpg); } }
-    @media screen and (min-width: 1440px) {
-      .container.home-active {
-        background-image: url(../images/home/background-home-desktop.jpg);
-        background-size: 100% 100%; } }
+    background-image: url(../images/home/space.jpg);
+    background-repeat: repeat;
+    background-size: auto; }
   .container.destination-active {
-    background-image: url(../images/destination/background-destination-mobile.jpg); }
-    @media screen and (min-width: 768px) {
-      .container.destination-active {
-        background-image: url(../images/destination/background-destination-tablet.jpg); } }
-    @media screen and (min-width: 1440px) {
-      .container.destination-active {
-        background-image: url(../images/destination/background-destination-desktop.jpg);
-        background-size: 100% 100%; } }
+    background-image: url(../images/destination/back.webp); }
   .container.crew-active {
-    background-image: url(../images/crew/background-crew-mobile.jpg); }
-    @media screen and (min-width: 768px) {
-      .container.crew-active {
-        background-image: url(../images/crew/background-crew-tablet.jpg); } }
-    @media screen and (min-width: 1440px) {
-      .container.crew-active {
-        background-image: url(../images/crew/background-crew-desktop.jpg);
-        background-size: 100% 100%; } }
+    background-image: url(../images/crew/back.jpg);
+    background-size: cover; }
   .container.technology-active {
-    background-image: url(../images/technology/background-technology-mobile.jpg); }
+    background-image: url(../images/technology/background-technology-mobile.jpg);
+    background-size: cover; }
     @media screen and (min-width: 768px) {
       .container.technology-active {
         background-image: url(../images/technology/background-technology-tablet.jpg); } }
@@ -77,11 +62,10 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 5;
+  z-index: 20;
   background-color: #0B0D17; }
 
 .swap-animation {
-  transform: translate(-80px);
   opacity: 0; }
 
 .section__title {
@@ -136,14 +120,16 @@ section {
     .nav-link:visited {
       font-size: 1rem; } }
 
-@media screen and (min-width: 1440px) {
-  .header {
-    font-size: 1rem;
-    line-height: 1.2;
-    color: #FFFFFF; } }
-
-.header__nav-item-number {
-  font-weight: 700; }
+.header {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.16875em; }
+  @media screen and (min-width: 1440px) {
+    .header {
+      font-size: 1rem;
+      line-height: 1.2;
+      color: #FFFFFF; } }
+  .header__nav-item-number {
+    font-weight: 700; }
 
 .home__title {
   color: #D0D6F9;
@@ -298,13 +284,45 @@ section {
   .technology__info {
     line-height: 2rem; } }
 
-@keyframes anim {
-  0% {
-    transform: translate(-80px);
-    opacity: 0; }
+:root {
+  --moveX: 0;
+  --moveY: 0;
+  --moveXp: 0px;
+  --moveYp: 0px;
+  --moveXt: 0px;
+  --moveYt: 0px; }
+
+@keyframes spin {
   100% {
-    transform: translate(0);
-    opacity: 1; } }
+    transform: rotate(360deg); } }
+
+@keyframes leviosa1 {
+  0%,
+  100% {
+    transform: translate(0); }
+  5%,
+  95% {
+    transform: translate(5px, 3px); }
+  10%,
+  90% {
+    transform: translate(2px, 7px); }
+  15%,
+  85% {
+    transform: translate(-1px, 3px); }
+  25%,
+  75% {
+    transform: translate(2px, -1px); }
+  35%,
+  65% {
+    transform: translate(-2px, 4px); }
+  40%,
+  60% {
+    transform: translate(5px, 3px); }
+  45%,
+  55% {
+    transform: translate(1px, -2px); }
+  50% {
+    transform: translate(2px, 2px); } }
 
 .section__title {
   margin-bottom: 32px; }
@@ -329,6 +347,7 @@ section {
 .popup {
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(40px);
+  z-index: 100;
   visibility: hidden;
   position: absolute;
   display: flex;
@@ -337,7 +356,7 @@ section {
   top: 0;
   right: 0;
   opacity: 0;
-  transition: all 0.4s; }
+  transition: all .4s; }
 
 .popup_active {
   visibility: visible;
@@ -357,7 +376,6 @@ section {
   width: 3px;
   height: 21px;
   right: 0;
-  transition: all 0.4s;
   background-color: #FFFFFF; }
 
 .popup__item-number {
@@ -405,7 +423,7 @@ section {
         .header__logo::after {
           content: '';
           position: absolute;
-          z-index: 10;
+          z-index: 6;
           left: 167px;
           top: 88px;
           right: 800px;
@@ -489,7 +507,7 @@ section {
   @media screen and (min-width: 1440px) {
     .home {
       margin-top: 251px;
-      margin-bottom: 131px;
+      padding-bottom: 131px;
       text-align: left;
       flex-direction: row;
       justify-content: space-around; } }
@@ -500,10 +518,12 @@ section {
       .home__title-accent {
         margin-top: 24px; } }
   .home__paragraph {
+    z-index: 1;
     margin: 0 auto;
     max-width: 445px;
     margin-top: 35px; }
   .home__button {
+    z-index: 1;
     align-self: center;
     border-radius: 50%;
     border: none;
@@ -525,6 +545,39 @@ section {
         padding: 120px 64px;
         align-self: flex-end; } }
 
+.home__planet {
+  position: absolute;
+  width: 1850px;
+  z-index: 0;
+  animation: spin 2000s infinite linear;
+  filter: brightness(0.4) drop-shadow(0 0 40px rgba(44, 140, 250, 0.3));
+  pointer-events: none; }
+  @media screen and (max-width: 767px) {
+    .home__planet {
+      top: 300px;
+      right: -750px; } }
+  @media screen and (min-width: 720px) {
+    .home__planet {
+      right: -600px; } }
+  @media screen and (min-width: 768px) {
+    .home__planet {
+      top: auto;
+      bottom: -1450px;
+      right: -550px; } }
+  @media screen and (min-width: 1024px) {
+    .home__planet {
+      right: -450px; } }
+  @media screen and (min-width: 1280px) {
+    .home__planet {
+      right: -350px; } }
+  @media screen and (min-width: 1440px) {
+    .home__planet {
+      bottom: -550px;
+      right: -1300px; } }
+  @media screen and (min-width: 1920px) {
+    .home__planet {
+      right: -1200px; } }
+
 .destination {
   text-align: center;
   margin-top: 24px; }
@@ -535,21 +588,43 @@ section {
     .destination {
       text-align: left; } }
   .destination__picture {
+    position: relative;
+    border-radius: 50%;
     width: 170px;
     margin: 0 auto;
     margin-bottom: 26px; }
+    .destination__picture::after {
+      position: absolute;
+      content: '';
+      width: 250px;
+      height: 250px;
+      bottom: -165px;
+      left: -50px;
+      opacity: 0.9;
+      background-color: #0B0D17;
+      filter: blur(68px); }
     .destination__picture img {
-      transition: all 0.4s; }
+      animation: spin 500s infinite linear; }
     @media screen and (min-width: 768px) {
       .destination__picture {
         width: 300px;
-        margin-bottom: 53px; } }
+        margin-bottom: 53px; }
+        .destination__picture::after {
+          width: 370px;
+          height: 370px;
+          bottom: -220px;
+          left: -100px; } }
     @media screen and (min-width: 1440px) {
       .destination__picture {
         width: 445px;
         margin-left: 0;
         margin-bottom: 0;
-        margin-top: 33px; } }
+        margin-top: 33px; }
+        .destination__picture::after {
+          width: 500px;
+          height: 500px;
+          bottom: -220px;
+          left: -100px; } }
   .destination__container {
     display: flex;
     flex-direction: column;
@@ -614,16 +689,15 @@ section {
         bottom: -49px; } }
 
 .info__text {
-  max-width: 573px;
-  transition: all 0.4s; }
-
-.info__title {
-  transition: all 0.4s; }
+  max-width: 573px; }
+  @media screen and (max-width: 520px) {
+    .info__text {
+      min-height: 125.25px; } }
 
 .info__stats-container {
   display: flex;
   flex-direction: column;
-  gap: 32px; }
+  justify-content: space-between; }
   @media screen and (min-width: 768px) {
     .info__stats-container {
       flex-direction: row;
@@ -636,7 +710,7 @@ section {
 
 .info__stats-accent {
   display: block;
-  transition: all 0.4s; }
+  width: 160px; }
 
 @media screen and (min-width: 1440px) {
   .destination .section__content-container {
@@ -686,18 +760,19 @@ section {
       .crew__image-container {
         position: absolute;
         bottom: 0;
-        right: 137px; } }
+        right: 137px;
+        transition: transform 4s ease-in-out;
+        transform: translate3d(calc(var(--moveX) * 4), calc(var(--moveY) + 20px), 0); } }
   .crew__image {
     height: 59vw;
-    width: auto;
-    transition: all 0.4s; }
+    width: auto; }
     @media screen and (min-width: 768px) {
       .crew__image {
         width: 456px;
         height: auto; } }
     @media screen and (min-width: 1440px) {
       .crew__image {
-        width: auto; } }
+        width: 515px; } }
   .crew__nav {
     display: flex;
     gap: 16px; }
@@ -730,20 +805,26 @@ section {
         margin: 0; } }
   .crew__position {
     order: -1;
-    margin-bottom: 8px;
-    transition: all 0.4s; }
+    margin-bottom: 8px; }
     @media screen and (min-width: 1440px) {
       .crew__position {
-        margin-bottom: 15px; } }
+        margin-bottom: 15px;
+        transition: transform 4s ease-in-out;
+        transform: translate3d(calc(var(--moveXt) * 1), calc(var(--moveYt ) * 1), 0); } }
   .crew__name {
-    margin-bottom: 16px;
-    transition: all 0.4s; }
+    margin-bottom: 16px; }
     @media screen and (min-width: 1440px) {
       .crew__name {
-        margin-bottom: 27px; } }
+        margin-bottom: 27px;
+        transition: transform 4s ease-in-out;
+        transform: translate3d(var(--moveXt), var(--moveYt), 0); } }
   .crew__info {
-    transition: all 0.4s;
-    max-width: 445px; }
+    max-width: 445px;
+    min-height: 160px; }
+    @media screen and (min-width: 1440px) {
+      .crew__info {
+        transition: transform 4s ease-in-out;
+        transform: translate3d(calc(calc(var(--moveXp) * -1.5) + 5px), calc(calc(var(--moveYp) * -1) + 3px), 0); } }
 
 .technology {
   flex-direction: column;
@@ -760,37 +841,64 @@ section {
     .technology .section__title {
       margin-bottom: 26px; } }
   .technology__image-container {
-    margin-bottom: 34px; }
+    margin-bottom: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    @media screen and (max-width: 767px) {
+      .technology__image-container {
+        min-height: 56vw; } }
     @media screen and (min-width: 768px) {
       .technology__image-container {
-        margin-bottom: 56px; } }
+        margin-bottom: 56px;
+        min-height: 430px; } }
     @media screen and (min-width: 1440px) {
       .technology__image-container {
         order: 3;
-        width: 515px;
-        height: 527px;
-        margin-left: auto; } }
+        max-height: 550px;
+        max-width: 510px;
+        margin-left: auto;
+        margin-right: 50px; } }
+    @media screen and (min-width: 1680px) {
+      .technology__image-container {
+        max-width: 700px;
+        margin-right: 100px; } }
   .technology__image {
-    object-fit: cover;
-    transition: all 0.4s; }
+    object-fit: contain;
+    z-index: 0; }
     @media screen and (max-width: 1439px) {
-      .technology__image_vehicle {
-        content: url(../images/technology/image-launch-vehicle-landscape.jpg); } }
+      .technology__image {
+        max-width: 768px; } }
     @media screen and (min-width: 1440px) {
-      .technology__image_vehicle {
-        content: url(../images/technology/image-launch-vehicle-portrait.jpg); } }
-    @media screen and (max-width: 1439px) {
-      .technology__image_spaceport {
-        content: url(../images/technology/image-spaceport-landscape.jpg); } }
-    @media screen and (min-width: 1440px) {
-      .technology__image_spaceport {
-        content: url(../images/technology/image-spaceport-portrait.jpg); } }
-    @media screen and (max-width: 1439px) {
-      .technology__image_capsule {
-        content: url(../images/technology/image-space-capsule-landscape.jpg); } }
-    @media screen and (min-width: 1440px) {
-      .technology__image_capsule {
-        content: url(../images/technology/image-space-capsule-portrait.jpg); } }
+      .technology__image {
+        transition-property: rotate;
+        transition-timing-function: ease-in-out; } }
+    .technology__image_vehicle {
+      content: url(../images/technology/image-launch-vehicle-landscape.png); }
+      @media screen and (max-width: 1439px) {
+        .technology__image_vehicle {
+          max-width: 768px; } }
+      @media screen and (min-width: 1440px) {
+        .technology__image_vehicle {
+          rotate: -60deg;
+          transition-duration: 8s; } }
+    .technology__image_spaceport {
+      content: url(../images/technology/space-station.png); }
+      @media screen and (min-width: 1440px) {
+        .technology__image_spaceport {
+          rotate: 180deg;
+          transition-duration: 40s; } }
+    .technology__image_capsule {
+      max-height: 430px;
+      content: url(../images/technology/space-capsule.png); }
+      @media screen and (max-width: 768px) {
+        .technology__image_capsule {
+          max-height: 55.3vw;
+          rotate: -90deg; } }
+      @media screen and (min-width: 1440px) {
+        .technology__image_capsule {
+          rotate: 270deg;
+          transition-duration: 20s; } }
   .technology__nav {
     display: flex;
     gap: 16px;
@@ -829,13 +937,11 @@ section {
         margin-bottom: 40px; } }
   .technology__span {
     order: -1; }
-  .technology__title {
-    transition: all 0.4s; }
   .technology__info {
     max-width: 450px;
-    margin: 0 24px;
-    transition: all 0.4s; }
+    margin: 0 24px; }
     @media screen and (min-width: 1440px) {
       .technology__info {
         margin: 0;
+        min-height: 192px;
         max-width: 444px; } }

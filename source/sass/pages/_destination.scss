@@ -11,24 +11,53 @@
     }
 
     &__picture{
+        position: relative;
+        border-radius: 50%;
         width: 170px;
         margin: 0 auto;
         margin-bottom: 26px;
 
+        &::after{
+            position: absolute;
+            content: '';
+            width: 250px;
+            height: 250px;
+            bottom: -165px;
+            left: -50px;
+            opacity: 0.9;
+            background-color: #0B0D17;
+            filter: blur(68px);
+        }
+
         img{
-            transition: $transition-default;
+            animation: spin 500s infinite linear;
         }
 
         @media screen and (min-width: 768px) {
             width: 300px;
             margin-bottom: 53px;
+
+            &::after{
+                width: 370px;
+                height: 370px;
+                bottom: -220px;
+                left: -100px;
+            }
         }
 
         @media screen and (min-width: 1440px) {
+            //overflow: hidden;
             width: 445px;
             margin-left: 0;
             margin-bottom: 0;
             margin-top: 33px;
+
+            &::after{
+                width: 500px;
+                height: 500px;
+                bottom: -220px;
+                left: -100px;
+            }
         }
     }
 
@@ -122,17 +151,16 @@
 .info{
     &__text{
         max-width: 573px;
-        transition: $transition-default;
-    }
 
-    &__title{
-        transition: $transition-default;
+        @media screen and (max-width: 520px) {
+            min-height: 125.25px;
+        }
     }
 
     &__stats-container{
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        justify-content: space-between;
 
         @media screen and (min-width: 768px) {
             flex-direction: row;
@@ -148,7 +176,7 @@
 
     &__stats-accent{
         display: block;
-        transition: $transition-default;
+        width: 160px;
     }
 }
 

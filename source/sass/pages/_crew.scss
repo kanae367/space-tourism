@@ -54,13 +54,15 @@
             position: absolute;
             bottom: 0;
             right: 137px;
+
+            transition: $default-transition;
+            transform: translate3d(calc(var(--moveX) * 4), calc(var(--moveY) + 20px), 0);
         }
     }
 
     &__image{
         height: 59vw;
         width: auto;
-        transition: $transition-default;
 
         @media screen and (min-width: 768px) {
             width: 456px;
@@ -68,7 +70,7 @@
         }
 
         @media screen and (min-width: 1440px) {
-            width: auto;
+            width: 515px;
         }
     }
 
@@ -118,24 +120,32 @@
     &__position{
         order: -1;
         margin-bottom: 8px;
-        transition: $transition-default;
+        
 
         @media screen and (min-width: 1440px) {
             margin-bottom: 15px;
+            transition: $default-transition;
+            transform: translate3d(calc(var(--moveXt) * 1), calc(var(--moveYt ) * 1), 0);
         }
     }
 
     &__name{
         margin-bottom: 16px;
-        transition: $transition-default;
 
         @media screen and (min-width: 1440px) {
-            margin-bottom: 27px;
+            margin-bottom: 27px; 
+            transition: $default-transition;
+            transform: translate3d(var(--moveXt), var(--moveYt), 0);
         }
     }
 
     &__info{
-        transition: $transition-default;
         max-width: 445px;
+        min-height: 160px;
+
+        @media screen and (min-width: 1440px) {
+            transition: $default-transition;
+            transform: translate3d(calc(calc(var(--moveXp) * -1.5) + 5px), calc(calc(var(--moveYp) * -1) + 3px), 0);
+        }
     }
 }

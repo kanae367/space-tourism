@@ -1,10 +1,86 @@
-@keyframes anim {
-    0%{
-        transform: translate(-80px);
-        opacity: 0;
-    }
+:root{
+    --moveX: 0;
+    --moveY: 0;
+    --moveXp: 0px;
+    --moveYp: 0px;
+    --moveXt: 0px;
+    --moveYt: 0px;
+}
+
+@keyframes spin {
     100%{
-        transform: translate(0);
-        opacity: 1;
+        transform: rotate(360deg);
     }
 }
+
+@keyframes leviosa1 {
+    0%,
+    100%{
+        transform: translate(0);
+    }
+
+    5%,
+    95%{
+        transform: translate(5px,3px);
+    }
+
+    10%,
+    90%{
+        transform: translate(2px, 7px);
+    }
+
+    15%,
+    85%{
+        transform: translate(-1px, 3px);
+    }
+
+    25%,
+    75%{
+        transform: translate(2px, -1px);
+    }
+
+    35%,
+    65%{
+        transform: translate(-2px, 4px);
+    }
+
+    40%,
+    60%{
+        transform: translate(5px,3px);
+    }
+
+    45%,
+    55%{
+        transform: translate(1px, -2px);
+    }
+
+    50%{
+        transform: translate(2px, 2px);
+    }
+}
+
+// @keyframes leviosa {
+//     0%,
+//     100%{
+//         transform: translate(0);
+//     }
+
+//     10%,
+//     90%{
+//         transform: translate(2px, 7px);
+//     }
+
+//     30%,
+//     70%{
+//         transform: translate(-3px, 2px);
+//     }
+
+//     40%,
+//     60%{
+//         transform: translate(-5px, 6px);
+//     }
+
+//     50%{
+//         transform: translate(1px, -3px);
+//     }
+// }
