@@ -724,7 +724,8 @@ section {
   margin-top: 24px; }
   @media screen and (min-width: 1440px) {
     .crew {
-      text-align: left; } }
+      text-align: left;
+      padding-bottom: 60px; } }
   .crew .section__content-container {
     gap: 32px; }
     @media screen and (min-width: 768px) {
@@ -869,36 +870,20 @@ section {
     @media screen and (max-width: 1439px) {
       .technology__image {
         max-width: 768px; } }
-    @media screen and (min-width: 1440px) {
-      .technology__image {
-        transition-property: rotate;
-        transition-timing-function: ease-in-out; } }
     .technology__image_vehicle {
       content: url(../images/technology/image-launch-vehicle-landscape.png); }
       @media screen and (max-width: 1439px) {
         .technology__image_vehicle {
           max-width: 768px; } }
-      @media screen and (min-width: 1440px) {
-        .technology__image_vehicle {
-          rotate: -60deg;
-          transition-duration: 8s; } }
     .technology__image_spaceport {
       content: url(../images/technology/space-station.png); }
-      @media screen and (min-width: 1440px) {
-        .technology__image_spaceport {
-          rotate: 180deg;
-          transition-duration: 40s; } }
     .technology__image_capsule {
       max-height: 430px;
-      content: url(../images/technology/space-capsule.png); }
+      content: url(../images/technology/space-capsule.png);
+      rotate: -90deg; }
       @media screen and (max-width: 768px) {
         .technology__image_capsule {
-          max-height: 55.3vw;
-          rotate: -90deg; } }
-      @media screen and (min-width: 1440px) {
-        .technology__image_capsule {
-          rotate: 270deg;
-          transition-duration: 20s; } }
+          max-height: 55.3vw; } }
   .technology__nav {
     display: flex;
     gap: 16px;

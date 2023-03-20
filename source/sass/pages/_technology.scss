@@ -56,45 +56,25 @@
             max-width: 768px;
         }
 
-        @media screen and (min-width: 1440px) {
-            transition-property: rotate;
-            transition-timing-function: ease-in-out;
-        }
-
         &_vehicle{
             content: url(../images/technology/image-launch-vehicle-landscape.png);
 
             @media screen and (max-width: 1439px) {
                 max-width: 768px;
             }
-
-            @media screen and (min-width: 1440px) {
-                rotate: -60deg;
-                transition-duration: 8s;
-            }
         }
 
         &_spaceport{
             content: url(../images/technology/space-station.png);
-            
-            @media screen and (min-width: 1440px) {
-                rotate: 180deg;
-                transition-duration: 40s;
-            }
         }
 
         &_capsule{
             max-height: 430px;
             content: url(../images/technology/space-capsule.png);
+            rotate: -90deg;
 
             @media screen and (max-width: 768px) {
                 max-height: 55.3vw;
-                rotate: -90deg;
-            }
-
-            @media screen and (min-width: 1440px) {
-                rotate: 270deg;
-                transition-duration: 20s;
             }
         }
     }
