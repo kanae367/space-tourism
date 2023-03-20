@@ -135,20 +135,20 @@ if($(window).innerWidth() > 1400){
             }
         }
     
-        let randomNumberX = Math.round(Math.random() * 6);
-        let randomNumberY = Math.round(Math.random() * 6);
+        let randomNumberX = Math.round(Math.random() * 3) + 3;
+        let randomNumberY = Math.round(Math.random() * 3) + 3;
     
         document.documentElement.style.setProperty('--moveX', `${randomDirection[0]}${randomNumberX}px`);
         document.documentElement.style.setProperty('--moveY', `${randomDirection[1]}${randomNumberY}px`);
     
-        let randomNumberXp = Math.round(Math.random() * 6);
-        let randomNumberYp = Math.round(Math.random() * 6);
+        let randomNumberXp = Math.round(Math.random() * 3) + 3;
+        let randomNumberYp = Math.round(Math.random() * 3) + 3;
     
         document.documentElement.style.setProperty('--moveXp', `${randomDirection[2]}${randomNumberXp}px`);
         document.documentElement.style.setProperty('--moveYp', `${randomDirection[3]}${randomNumberYp}px`);
     
-        let randomNumberXt = Math.round(Math.random() * 6);
-        let randomNumberYt = Math.round(Math.random() * 6);
+        let randomNumberXt = Math.round(Math.random() * 3) + 3;
+        let randomNumberYt = Math.round(Math.random() * 3) + 3;
     
         document.documentElement.style.setProperty('--moveXt', `${randomDirection[4]}${randomNumberXt}px`);
         document.documentElement.style.setProperty('--moveYt', `${randomDirection[5]}${randomNumberYt}px`);
