@@ -484,6 +484,7 @@ section {
     bottom: 0;
     left: 0;
     transform: scaleX(0);
+    transform-origin: left;
     transition: transform .5s;
     background: rgba(255, 255, 255, 0.5); }
   .header__nav-list-item:hover::before {

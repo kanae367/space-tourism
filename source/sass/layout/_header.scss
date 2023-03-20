@@ -109,6 +109,7 @@
         bottom: 0;
         left: 0;
         transform: scaleX(0);
+        transform-origin: left;
         transition: transform .5s;
         background: rgba($color-light-main, $alpha: .5);
     }
