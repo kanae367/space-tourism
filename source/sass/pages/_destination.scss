@@ -111,7 +111,7 @@
             bottom: -12px;
             left: 0;
             transform: scaleX(0);
-            transform-origin: right;
+            transform-origin: left;
             transition: transform .2s;
             background: rgba($color-light-main, $alpha: .5);
         }
@@ -177,6 +177,7 @@
     &__stats-accent{
         display: block;
         width: 160px;
+        margin: 0 auto;
     }
 }
 

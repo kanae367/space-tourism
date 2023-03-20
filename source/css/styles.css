@@ -669,7 +669,7 @@ section {
       bottom: -12px;
       left: 0;
       transform: scaleX(0);
-      transform-origin: right;
+      transform-origin: left;
       transition: transform .2s;
       background: rgba(255, 255, 255, 0.5); }
     .destination .nav-link:hover::before {
@@ -715,7 +715,8 @@ section {
 
 .info__stats-accent {
   display: block;
-  width: 160px; }
+  width: 160px;
+  margin: 0 auto; }
 
 @media screen and (min-width: 1440px) {
   .destination .section__content-container {
