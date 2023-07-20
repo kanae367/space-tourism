@@ -767,6 +767,7 @@ section {
       .crew__image-container {
         position: absolute;
         bottom: 0;
+        will-change: transform;
         right: 137px;
         transition: transform 4s ease-in-out;
         transform: translate3d(calc(var(--moveX) * 4), calc(calc(var(--moveY) * 2) + 20px), 0); } }
@@ -816,6 +817,7 @@ section {
     @media screen and (min-width: 1440px) {
       .crew__position {
         margin-bottom: 15px;
+        will-change: transform;
         transition: transform 4s ease-in-out;
         transform: translate3d(calc(var(--moveXt) * 1), calc(var(--moveYt ) * 1), 0); } }
   .crew__name {
@@ -823,6 +825,7 @@ section {
     @media screen and (min-width: 1440px) {
       .crew__name {
         margin-bottom: 27px;
+        will-change: transform;
         transition: transform 4s ease-in-out;
         transform: translate3d(var(--moveXt), var(--moveYt), 0); } }
   .crew__info {
@@ -830,6 +833,7 @@ section {
     min-height: 160px; }
     @media screen and (min-width: 1440px) {
       .crew__info {
+        will-change: transform;
         transition: transform 4s ease-in-out;
         transform: translate3d(calc(calc(var(--moveXp) * -1.5) + 5px), calc(calc(var(--moveYp) * -1) + 3px), 0); } }
 
