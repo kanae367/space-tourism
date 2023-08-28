@@ -1,4 +1,4 @@
-const destination = {
+export const destination = {
     moon: {
         name: "moon",
         image: "image-moon.webp",
@@ -40,7 +40,7 @@ const destination = {
     }
 }
 
-const crew = {
+export const crew = {
     hurley: {
         name: "Douglas Hurley",
         position: "Commander",
@@ -70,7 +70,7 @@ const crew = {
     }
 }
 
-const technology = {
+export const technology = {
     vehicle: {
         title: "Launch vehicle",
         text: "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",

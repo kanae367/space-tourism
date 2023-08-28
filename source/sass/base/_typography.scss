@@ -2,7 +2,7 @@
 .section__title{
     @include subheading;
 
-    @media screen and(min-width: 768px) {
+    @media screen and (min-width: 768px) {
         font-size: 1.25rem;
     }
 
@@ -27,16 +27,15 @@
 
     @media screen and (min-width: 768px) {
         font-size: 1rem;
-        line-height: 1.75;
+        line-height: 1.75; 
     }
 
-    @media screen and(min-width: 1440px) {
+    @media screen and (min-width: 1440px) {
         font-size: 1.125rem;
     }
 }
 
 //стили для навигации (header destination)
-
 .nav-link,
 .nav-link:visited{
     @include subheading(0.875rem, 1);
