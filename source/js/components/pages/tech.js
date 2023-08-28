@@ -1,5 +1,5 @@
 import {changeText} from './changeText.js';
-import { technology } from '../data.js';
+import { technology } from '../../data.js';
 
 const techNavElements = $(".technology__nav-btn");
 const techTitle = $(".technology__title");

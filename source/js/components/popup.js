@@ -1,3 +1,5 @@
+import { navClickHandler } from "./navigationClick.js";
+
 const popup = $('.popup');
 const popupCloseBtnClickHandler = function(){
     popup.removeClass('popup_active');
@@ -10,9 +12,9 @@ const popupOpenBtnClickHandler = function(){
     popupCloseBtn.on('click',popupCloseBtnClickHandler);
 };
 
-export const setPopupEventListener = () => {
+export const setPopupEventListeners = () => {
     const popupOpenBtn = $('.header__nav-overlay');
     popupOpenBtn.on('click', popupOpenBtnClickHandler);
 
-    return $('.popup__list-item');
+    $('.popup__list-item').on('click', navClickHandler);
 }

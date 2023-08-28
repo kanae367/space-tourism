@@ -13,6 +13,6 @@ export const navClickHandler = function() {
     
     setTimeout(function(){
         const activeClass = navElement.find('.nav-link').attr('data-page') + '-active';
-        $('container').attr('class', `container ${activeClass}`);
+        $('.container').attr('class', `container ${activeClass}`);
     }, 400)
 };

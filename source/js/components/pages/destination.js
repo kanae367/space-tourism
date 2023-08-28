@@ -1,5 +1,5 @@
 import {changeText} from './changeText.js';
-import { destination } from '../data.js';
+import { destination } from '../../data.js';
 
 const destinationNavElements = $(".destination__list-item *");
 const planetImageElement = $(".destination__picture");

@@ -1,5 +1,5 @@
 import {changeText} from './changeText.js';
-import { crew } from '../data.js';
+import { crew } from '../../data.js';
 
 const crewNavElements = $(".crew__nav-link");
 const memberNameElement = $(".crew__name");
