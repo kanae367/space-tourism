@@ -57,7 +57,7 @@
             right: 137px;
 
             transition: $default-transition;
-            transform: translate3d(calc(var(--moveX) * 4), calc(calc(var(--moveY) * 2) + 20px), 0);
+            transform: translate3d(calc(var(--moveX) * 4), calc(calc(var(--moveY) * 4)), 0);
         }
     }
 
@@ -126,7 +126,7 @@
         @media screen and (min-width: 1440px) {
             margin-bottom: 15px;
             transition: $default-transition;
-            transform: translate3d(calc(var(--moveXt) * 1), calc(var(--moveYt ) * 1), 0);
+            transform: translate3d(calc(var(--moveXt) * 1.5), calc(var(--moveYt ) * -1.5), 0);
         }
     }
 
@@ -146,7 +146,7 @@
 
         @media screen and (min-width: 1440px) {
             transition: $default-transition;
-            transform: translate3d(calc(calc(var(--moveXp) * -1.5) + 5px), calc(calc(var(--moveYp) * -1) + 3px), 0);
+            transform: translate3d(var(--moveXp), var(--moveYp), 0);
         }
     }
 }

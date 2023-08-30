@@ -81,10 +81,7 @@ section {
 
 .content-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 20;
   background-color: #0B0D17;
 }
@@ -371,8 +368,8 @@ section {
 }
 
 :root {
-  --moveX: 0;
-  --moveY: 0;
+  --moveX: 0px;
+  --moveY: 0px;
   --moveXp: 0px;
   --moveYp: 0px;
   --moveXt: 0px;
@@ -382,35 +379,6 @@ section {
 @keyframes spin {
   100% {
     transform: rotate(360deg);
-  }
-}
-@keyframes leviosa1 {
-  0%, 100% {
-    transform: translate(0);
-  }
-  5%, 95% {
-    transform: translate(5px, 3px);
-  }
-  10%, 90% {
-    transform: translate(2px, 7px);
-  }
-  15%, 85% {
-    transform: translate(-1px, 3px);
-  }
-  25%, 75% {
-    transform: translate(2px, -1px);
-  }
-  35%, 65% {
-    transform: translate(-2px, 4px);
-  }
-  40%, 60% {
-    transform: translate(5px, 3px);
-  }
-  45%, 55% {
-    transform: translate(1px, -2px);
-  }
-  50% {
-    transform: translate(2px, 2px);
   }
 }
 .section__title {
@@ -988,7 +956,7 @@ section {
     bottom: 0;
     right: 137px;
     transition: transform 4s ease-in-out;
-    transform: translate3d(calc(var(--moveX) * 4), calc(var(--moveY) * 2 + 20px), 0);
+    transform: translate3d(calc(var(--moveX) * 4), calc(var(--moveY) * 4), 0);
   }
 }
 .crew__image {
@@ -1055,7 +1023,7 @@ section {
   .crew__position {
     margin-bottom: 15px;
     transition: transform 4s ease-in-out;
-    transform: translate3d(calc(var(--moveXt) * 1), calc(var(--moveYt) * 1), 0);
+    transform: translate3d(calc(var(--moveXt) * 1.5), calc(var(--moveYt) * -1.5), 0);
   }
 }
 .crew__name {
@@ -1075,7 +1043,7 @@ section {
 @media screen and (min-width: 1440px) {
   .crew__info {
     transition: transform 4s ease-in-out;
-    transform: translate3d(calc(var(--moveXp) * -1.5 + 5px), calc(var(--moveYp) * -1 + 3px), 0);
+    transform: translate3d(var(--moveXp), var(--moveYp), 0);
   }
 }
 
